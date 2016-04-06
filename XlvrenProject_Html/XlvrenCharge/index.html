@@ -151,8 +151,11 @@
 				background:#f4f4f4;
 			}
 			.iabout {
-				background:no-repeat center center url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABYCAYAAAADWlKCAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAK6wAACusBgosNWgAAABZ0RVh0Q3JlYXRpb24gVGltZQAwOS8xMi8xM5w+I3MAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAADkUlEQVR4nO2b63HTQBRGTxj+EyrAVBAzWwBKBYQO0kHcAU4HTgehApwKUArYwa4ApwJwBeGHNuAY2URaSfczuWcmk3jH+xid7N596ej+/h5HhxfWDXAe40LEcCFiuBAxXIgYLkQMFyKGCxHDhYjhQsRwIWK4EDFciBguRAwXIoYLEcOFiOFCxHAhYrgQMVyIGC5EDBcihgsRw4WI4ULEeGndgKbEGEdAkX7GwMmOry6BBVAC8xDCz/5bl8/RodztjTEWwAT40LKIG2AWQii7alMfyAuJMY6BGfC+oyJvgamqGGkhMcYZcNFT8VchhElPZbdGUkiM8Zhq7N8VH7piCRRK8UVulpWGqJL+ZZDqWKQ6JZDqIalnLIA3GcUs0+8mQmV6iloPKWkv4zPwOoQwDiGMgVNg/cS8J6luc2R6SGYAvw0hFDVlzmk2TTYP9BI9JK0xcmZTsx3pq4blXFjHEwkhwLSncs9a5NkldxDMh6zUO75mFvMoKKfJwTXtV/WnVgtHhb2sLsbsE2AVY1ykz7mr+glGQd60h6T/5B9mDdjP2xDCauhKrWNImzF+KAqLSq2FFMb176OwqNRaSFdTzDvgkmqYOaJaFOZiMv21Duq5+1VrYBJCuN5MDCGUMcbMogfZS/sL6x6SwyUw2pYBvycLB8khCllTrROmwPGOh18M2qIOOUQh58AorTm+Uz/WF0M2qEusY0gbvmx+2LGiLgZpSQ8cYg/Z5HY7IQ1hJgG5C6yFLP/9lb0satKKzDIfyG1bK6yF1D3QJpQ1aV2t/nPb1gprIWUP+YvMMveV3TuHLGS5fQaebjXmnMdvMu+onEaYCkm7qTcts5c1aaONv6+oztnbcGN14cG6h0D7E7qyJm1F2tOiOoVsux9ldmpofmIIEGMsaX6otPO8Ip2Lz2k3fNVemBgKlYXhBPjWJEOdjLQGmQCfMtoyzcibjUQPgVbXgD6GEOYp7zHVlsqEvKBufg1IRghA2p966ip7zZ+1Qhc345fpgp0pCkF9k4Knr5BfUYnoQsYdIvtfUkLSVPOc6gENxRI4U7jXC2JD1gPP+XUESSEPPMcXdqSGrG3SAzulZps9g1vgnaIMEO8hm/hLn6Kk+HJGs9eiS4tbiG04OCH/O9Ix5DniQsRwIWK4EDFciBguRAwXIoYLEcOFiOFCxHAhYrgQMVyIGC5EDBcihgsRw4WI4ULEcCFiuBAxfgHyQw1G9FJgWwAAAABJRU5ErkJggg==);
-				background-size:50px 44px;
+				width: 3.43rem;
+				height: 3.43rem;
+				background:no-repeat center center url(img/DefaultImages/main_search.png);
+				background-size:50% 50%;
+				margin-top: -0.2rem;
 			}
 			.item {
 				display:block;
@@ -190,6 +193,45 @@
 				margin-top: 95%;*/
 				position: absolute;right: 50%;top: 78%;
 			}
+			#charge_lastTime {
+				font-size: 1.0rem;
+				text-align: left;
+				color: white;
+				width: 5.0rem;
+				height: 1.25rem;
+				background-color: red;
+				position: absolute;left: 1.5rem;bottom: 1.75rem;
+			}
+			#welcom_lbl {
+				color: white;
+				text-align: left;
+				font-size: 1.0rem;
+				width: 11.25rem;
+				height: 1.25;
+				background-color: blue;
+				position: absolute;left: 1.5rem;bottom: 0.1rem;
+			}
+			#charge_lastOrder {
+				color: white;
+				text-align: left;
+				font-size: 1.56rem;
+				width: 11.25rem;
+				height: 1.875rem;
+				background-color: gray;
+				position: absolute;left: 1.5rem;bottom: -1.0rem;
+			}
+			#main_orderList {
+				border: 1px solid;
+				width: 4.37rem;
+				height: 4.37rem;
+				position: absolute;left: 4.0rem;bottom: 4.2rem;
+			}
+			#main_userInfo {
+				border:1px solid;
+				width: 4.37rem;
+				height: 4.37rem;
+				position: absolute;right: 4.0rem;bottom: 4.2rem;
+			}
 		</style>
 	</head>
 	<body onselectstart="return false;">
@@ -200,10 +242,18 @@
 		</header>
 		<div id="content" class="content">
 			<div id="" class="main_bg">
+				<p id="charge_lastTime">上次充电</p>
+				<p id="welcom_lbl" style="display: none;">点击右侧图标开始充电</p>
+				<p id="charge_lastOrder">2016-03-16</p>
 				<button type="button" class="main_chargeBtn" onclick="goToCharge()"></button>
 			</div>
 			<div class="grayLine"></div>
-			
+			<div id="main_orderList">
+				
+			</div>
+			<div id="main_userInfo">
+				
+			</div>
 		</div>
 	</body>
 	<script type="text/javascript" src="js/immersed.js" ></script>
