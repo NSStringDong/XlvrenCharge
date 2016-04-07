@@ -136,9 +136,12 @@
 					}
 				}
 			}
-			function goToCharge (){
-//				$('.main_chargeBtn').attr('background', 'url(img/DefaultImages/main_charge_click.png)');
-				alert('温馨提示','fuck');
+			/**
+			 * 首页三个按钮方法
+			 * @param {按钮标记} index
+			 */
+			function getOrderList (index) {
+				alert("显示充电记录");
 			}
 		</script>
 		<link rel="stylesheet" href="css/common.css" type="text/css" charset="utf-8"/>
@@ -153,7 +156,7 @@
 			.iabout {
 				width: 3.43rem;
 				height: 3.43rem;
-				background:no-repeat center center url(img/DefaultImages/main_search.png);
+				background:no-repeat center center url(img/DefaultImages/new_search@2x.png);
 				background-size:50% 50%;
 				margin-top: -0.2rem;
 			}
@@ -221,16 +224,36 @@
 				position: absolute;left: 1.5rem;bottom: -1.0rem;
 			}
 			#main_orderList {
-				border: 1px solid;
+				/*border: 1px solid;*/
 				width: 4.37rem;
 				height: 4.37rem;
 				position: absolute;left: 4.0rem;bottom: 4.2rem;
 			}
 			#main_userInfo {
-				border:1px solid;
+				/*border:1px solid;*/
 				width: 4.37rem;
 				height: 4.37rem;
 				position: absolute;right: 4.0rem;bottom: 4.2rem;
+			}
+			#icon_list {
+				width: 2.18rem;
+				height: 2.812rem;
+				position: absolute;left: 1.0rem;top: 0.35rem;
+			}
+			#charge_list {
+				color: rgba(135.0, 135.0, 135.0, 1);
+				font-size: 0.875rem;
+				position: absolute;left: 0;right: 0;bottom: -0.9rem;
+			}
+			#icon_main {
+				width: 2.18rem;
+				height: 2.812rem;
+				position: absolute;left: 1.0rem;top: 0.35rem;
+			}
+			#charge_main {
+				color: rgba(135.0, 135.0, 135.0, 1);
+				font-size: 0.875rem;
+				position: absolute;left: 0;right: 0;bottom: -0.9rem;
 			}
 		</style>
 	</head>
@@ -245,14 +268,16 @@
 				<p id="charge_lastTime">上次充电</p>
 				<p id="welcom_lbl" style="display: none;">点击右侧图标开始充电</p>
 				<p id="charge_lastOrder">2016-03-16</p>
-				<button type="button" class="main_chargeBtn" onclick="goToCharge()"></button>
+				<button type="button" class="main_chargeBtn" onclick="getOrderList(0)"></button>
 			</div>
 			<div class="grayLine"></div>
-			<div id="main_orderList">
-				
+			<div id="main_orderList" onclick="getOrderList(1)">
+				<img id="icon_list" src="img/DefaultImages/new_list@2x.png"/>
+				<p id="charge_list">充电记录</p>
 			</div>
-			<div id="main_userInfo">
-				
+			<div id="main_userInfo" onclick="getOrderList(2)">
+				<img id="icon_main" src="img/DefaultImages/main_self.png"/>
+				<p id="charge_main">我的</p>
 			</div>
 		</div>
 	</body>
